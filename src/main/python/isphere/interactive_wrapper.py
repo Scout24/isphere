@@ -261,6 +261,7 @@ class ESX(object):
 
     """
     An ESX instance.
+    See for details about raw_esx type: https://github.com/vmware/pyvmomi/blob/master/docs/vim/HostSystem.rst
     """
 
     def __init__(self, raw_esx):
@@ -306,6 +307,7 @@ class VM(object):
 
     """
     A virtual machine.
+    See for details about raw_vm type: https://github.com/vmware/pyvmomi/blob/master/docs/vim/VirtualMachine.rst
     """
 
     def __init__(self, raw_vm):
