@@ -291,8 +291,16 @@ class ESX(object):
         raise RuntimeError(message.format(self.name, resources_on_esx))
 
     def get_vms(self):
-        resources_on_esx = self.raw_esx.licensableResource.resource
-        print resources_on_esx
+        """
+        Returns a list of VMs (vim.VirtualMachine) on this ESX.
+        Further Info: https://github.com/vmware/pyvmomi/blob/master/docs/vim/HostSystem.rst
+        """
+        vms = self.raw_esx.vm
+        print "VMs on the ESX: {0}".format(vms)
+
+        for vm in vms:
+            yield VM(vm)
+
 
 class VM(object):
 
