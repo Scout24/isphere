@@ -9,7 +9,6 @@ The isphere command classes.
 """
 
 import cmd
-
 import cmd2
 
 from isphere.command.core_command import CoreCommand

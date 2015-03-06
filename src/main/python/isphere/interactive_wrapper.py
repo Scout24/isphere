@@ -290,6 +290,9 @@ class ESX(object):
         message = "{0} has no resource numCpuCores.\n Available resources: {1}"
         raise RuntimeError(message.format(self.name, resources_on_esx))
 
+    def get_vms(self):
+        resources_on_esx = self.raw_esx.licensableResource.resource
+        print resources_on_esx
 
 class VM(object):
 
